@@ -16,7 +16,7 @@ scrape(url, function (err, o, dom) {
 				var obj = {
 					room: "",
 					bookings: []
-				};
+				}
 				obj.room = childData.raw.trim()
 				var hasData = children[1].children[0].children[0].children[1] // this is where we find our data, if it's present
 				if (hasData) {
@@ -28,14 +28,14 @@ scrape(url, function (err, o, dom) {
 								name: currentData[9].raw.trim()
 							})
 						}
-					});
+					})
 				}
 				selection.push(obj)
 			}
 		})
-	});
+	})
 	logger(selection)
-});
+})
 
 function logger(data) {
 	console.log(JSON.stringify(data, null, 4))
